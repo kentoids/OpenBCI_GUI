@@ -24,11 +24,12 @@ void keyPressed() {
   if (key == CODED) {
     switch(keyCode) {
       case LEFT:
-        currentTableRowIndex -= 200;
+        currentTableRowIndex -= (int)get_fs_Hz_safe();
         if (currentTableRowIndex < 0) currentTableRowIndex = 0;
+        // int(float(currentTableRowIndex)/get_fs_Hz_safe())
         break;
       case RIGHT:
-        currentTableRowIndex += 200;
+        currentTableRowIndex += (int)get_fs_Hz_safe();
         break;
       case UP:
         currentTableRowIndex = 0;
