@@ -273,7 +273,7 @@ void initializeFFTObjects(FFT[] fftBuff, float[][] dataBuffY_uV, int N, float fs
   }
 }
 
-
+// Note by Kento: this is where the data is being looped
 int getPlaybackDataFromTable(Table datatable, int currentTableRowIndex, float scale_fac_uVolts_per_count, float scale_fac_accel_G_per_count, DataPacket_ADS1299 curDataPacket) {
   float val_uV = 0.0f;
   float[] acc_G = new float[n_aux_ifEnabled];

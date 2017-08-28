@@ -21,6 +21,21 @@ void keyPressed() {
   //note that the Processing variable "keyCode" is the keypress as a JAVA keycode.  This differs from ASCII
   //println("OpenBCI_GUI: keyPressed: key = " + key + ", int(key) = " + int(key) + ", keyCode = " + keyCode);
 
+  if (key == CODED) {
+    switch(keyCode) {
+      case LEFT:
+        currentTableRowIndex -= 200;
+        if (currentTableRowIndex < 0) currentTableRowIndex = 0;
+        break;
+      case RIGHT:
+        currentTableRowIndex += 200;
+        break;
+      case UP:
+        currentTableRowIndex = 0;
+        break;
+    }
+  }
+
   if(!controlPanel.isOpen && !isNetworkingTextActive()){ //don't parse the key if the control panel is open
     if ((int(key) >=32) && (int(key) <= 126)) {  //32 through 126 represent all the usual printable ASCII characters
       parseKey(key);

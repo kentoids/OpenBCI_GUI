@@ -372,6 +372,7 @@ void setup() {
 //======================== DRAW LOOP =============================//
 
 void draw() {
+  println("currentTableRowIndex: " + currentTableRowIndex);
   drawLoop_counter++; //signPost("10");
   systemUpdate(); //signPost("20");
   systemDraw();   //signPost("30");
