@@ -20,7 +20,20 @@ void keyPressed() {
   //note that the Processing variable "key" is the keypress as an ASCII character
   //note that the Processing variable "keyCode" is the keypress as a JAVA keycode.  This differs from ASCII
   //println("OpenBCI_GUI: keyPressed: key = " + key + ", int(key) = " + int(key) + ", keyCode = " + keyCode);
-
+  switch (key) {
+    case '0':
+      currentTableRowIndex = 0;
+      break;
+    case '1':
+      playback_speed_fac += 0.1;
+      break;
+    case '2':
+      playback_speed_fac -= 0.1;
+      break;
+  }
+  if (key == 0) {
+    currentTableRowIndex = 0;
+  }
   if (key == CODED) {
     switch(keyCode) {
       case LEFT:
@@ -32,7 +45,13 @@ void keyPressed() {
         currentTableRowIndex += (int)get_fs_Hz_safe();
         break;
       case UP:
-        currentTableRowIndex = 0;
+        // currentTableRowIndex = 0;
+        rowIncrement ++;
+        break;
+      case DOWN:
+        rowIncrement --;
+        break;
+      default:
         break;
     }
   }

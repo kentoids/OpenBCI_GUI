@@ -289,7 +289,9 @@ int getPlaybackDataFromTable(Table datatable, int currentTableRowIndex, float sc
   } else {
     //get the row
     TableRow row = datatable.getRow(currentTableRowIndex);
-    currentTableRowIndex++; //increment to the next row
+    // Edited by Kento: increment is done here, change to make speed faster
+    // currentTableRowIndex++; //increment to the next row
+    currentTableRowIndex += rowIncrement;
 
     //get each value
     for (int Ichan=0; Ichan < nchan; Ichan++) {

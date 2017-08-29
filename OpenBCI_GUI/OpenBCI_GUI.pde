@@ -80,6 +80,8 @@ String playbackData_fname = "N/A"; //only used if loading input data from a file
 // String playbackData_fname;  //leave blank to cause an "Open File" dialog box to appear at startup.  USEFUL!
 float playback_speed_fac = 1.0f;  //make 1.0 for real-time.  larger for faster playback
 int currentTableRowIndex = 0;
+// edited by Kento: amount of increment in row index
+int rowIncrement = 1;
 Table_CSV playbackData_table;
 int nextPlayback_millis = -100; //any negative number
 
@@ -990,6 +992,9 @@ void systemDraw() { //for drawing to the screen
   //   size(currentWidth*2, currentHeight*2);
   // }
 
+  // edited by Kento: show row increment
+  fill(0);
+  text("i:" + rowIncrement + " sp:" + playback_speed_fac, width-60, height-40);
 }
 
 void introAnimation() {
