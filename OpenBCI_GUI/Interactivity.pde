@@ -21,13 +21,13 @@ void keyPressed() {
   //note that the Processing variable "keyCode" is the keypress as a JAVA keycode.  This differs from ASCII
   //println("OpenBCI_GUI: keyPressed: key = " + key + ", int(key) = " + int(key) + ", keyCode = " + keyCode);
   switch (key) {
-    case '0':
+    case 'b':
       currentTableRowIndex = 0;
       break;
-    case '1':
+    case '+':
       playback_speed_fac += 0.1;
       break;
-    case '2':
+    case '-':
       playback_speed_fac -= 0.1;
       break;
   }
